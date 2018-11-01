@@ -43,19 +43,20 @@ void GetROI(Mat img)
 		boundRect[i] = boundingRect(Mat(contours_poly[i]));
 	
 	}
-
+	imshow("img3", outimg);
+	Scalar color = Scalar(255);
 	for (int i = 0; i < contours.size(); i++)
 	{
-		Scalar color = Scalar(255);
-		drawContours(resultimg, contours, i, color,1, 8, hierarchy, 0, Point());
-
+		
+		//drawContours(resultimg, contours, i, color,1, 8, hierarchy, 0, Point());
+		// 사각형 그리기..... bounding box
 		rectangle(resultimg, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);
 
 	}
 	imshow("img4", resultimg);
 	waitKey();
 
-	// 사각형 그리기..... bounding box
+	
 	
 
 	//1. 경계선 추출
