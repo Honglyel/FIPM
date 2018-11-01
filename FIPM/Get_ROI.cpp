@@ -23,8 +23,8 @@ Mat GetFluorescenceImage(Mat InputImg, int n_threshold, vector<vector<Point>>con
 	findContours(outimg, contours, hierarchy, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE, Point(0, 255)); // 뭔가 이상하다.... - 이미지 아래로 밀림.....
 	resultimg = Mat::zeros(outimg.size(), CV_8U);
 	vector<vector<Point> > contours_poly (contours.size());
-	 //bounding_boxes = new vector<Rect>(contours.size());
-
+	 bounding_boxes(contours.size());// 살려야한다.......... //수정필요.......
+	 
 	for (int i = 0; i < contours.size(); i++)
 	{
 		approxPolyDP(Mat(contours[i]), contours_poly[i], 3, true);
