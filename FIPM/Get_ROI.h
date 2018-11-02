@@ -6,7 +6,7 @@ using namespace cv;
 using namespace std;
 
 
-Mat GetFluorescenceImage(Mat InputImg,int n_threshold, vector<vector<Point>>contours, vector<Vec4i> hierarchy , vector<cv::Rect> bounding_boxes);
+Mat GetFluorescenceImage(Mat InputImg,int n_threshold, vector<vector<Point>>*contours, vector<Vec4i> *hierarchy , Rect *bounding_boxes);
 
 
 
